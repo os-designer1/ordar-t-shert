@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <title> ordar-t-shert </title>
+</head>
+<body>
+
+    <div class="header">
+        <a href="https://os-designer1.github.io/OS-Designer/">
+         <img src="logo.png" alt="لوجو الموقع" class="logo"> </a><!-- هنا ضع رابط الصورة -->
+        <div class="nav" id="nav">
+           <a href="https://os-designer1.github.io/OS-Designer-logo-Designer/">logo</a>
+           <a href="https://os-designer1.github.io/OS-Designer-Social-media-Designer/">أعلانات </a>
+           <a href="https://os-designer1.github.io/OS-Designer-panar-Designer/">بنر و يفط </a>
+           <a href="https://os-designer1.github.io/OS-Designer-logo-Teshrt-Designer/">لوجو علي تيشرت</a>
+           <a href="https://os-designer1.github.io/OS-Designer-pepar-Designer/">خدمات الورقيه </a>
+           <a href="https://os-designer1.github.io/support/">الدعم</a>
+        </div>
+        
+      
+        <div class="menu-icon" onclick="toggleNav()">☰</div>
+        </div>
+
+        <div class="header2">
+            
+            <div class="header2-nav">
+                <img src="Cargo truck.png" class="hedar-2-p-img-1">
+                <p class="hedar-2-p">توصيل امام المنزل</p>
+                
+                |
+                <img src="shop.png" class="hedar-2-p-img-1">                
+
+                <p class="hedar-2-p">الاستلام من المتجر</p>
+
+            </div>
+          </div>
+
+
+        <div class="container">
+            <div class="image-section">
+                <img src="تصميم زي شركه os.jpg" alt="img-top">
+            </div>
+    
+            <div class="info-section">
+               <div class="title">
+                    <h1>اطلب تيشرتك من هنا</h1>
+                    <p>يوجد اشتراك شهري وفر 20% او اكتر</p>
+                    <div class="descuond">
+                        <a href="https://os-designer1.github.io/month-ordar/" class="descuond-1">عرض الشهر الواحد</a>
+                    </div>
+                </div>
+    
+                <div class="options">
+                    <div class="option" onclick="selectOption('logo_text')">
+                        <span>تصميم و طباعه تيشرت <br><small> تصميم و طباعه عاليه الجوده </small></span>
+                        <span class="price">$300 جنيه</span>
+                    </div>
+                    
+                </div>
+                
+
+
+                <div class="order-container">
+                    <form id="form" class="order-form">
+                        <h2 class="form-title">طلب تصميم جديد</h2>
+                
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input class="input-field" type="text" name="name" placeholder=" " required>
+                                <span class="input-placeholder">الاسم الكامل</span>
+                            </label>
+                        </div>
+                
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input class="input-field" type="number" name="phone" placeholder=" " required>
+                                <span class="input-placeholder">رقم الهاتف</span>
+                            </label>
+                        </div>
+                        <script>
+                            // عند تحميل الصفحة، قم باسترجاع رقم الهاتف والاسم من Local Storage
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const loggedInUserPhone = localStorage.getItem('loggedInUserPhone'); // استرجاع رقم الهاتف من Local Storage
+                                const loggedInUserName = localStorage.getItem('loggedInUserName'); // استرجاع الاسم من Local Storage
+
+                                const phoneInput = document.querySelector('.input-field[name="phone"]'); // استهداف حقل رقم الهاتف
+                                const nameInput = document.querySelector('.input-field[name="name"]'); // استهداف حقل الاسم
+
+                                if (loggedInUserPhone && phoneInput) {
+                                    phoneInput.value = loggedInUserPhone; // تعبئة الحقل برقم الهاتف
+                                }
+
+                                if (loggedInUserName && nameInput) {
+                                    nameInput.value = loggedInUserName; // تعبئة الحقل بالاسم
+                                }
+
+                                if (!loggedInUserPhone || !loggedInUserName) {
+                                    console.log('لم يتم العثور على بيانات المستخدم المسجل.');
+                                }
+                            });
+                        </script>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                <select class="input-field" name="designType" required>
+                                    <option value="تصميم سوشال ميديا">تصميم و طباعه تيشرت</option>
+
+
+                                </select>
+                                <span class="input-placeholder">نوع التصميم</span>
+                            </label>
+                        </div>
+                
+                        <input type="hidden" name="location" id="location">
+                
+                        <button class="submit-btn" id="button">إرسال الطلب</button>
+                        <p class="form-note">سيتم التواصل معك في أقرب وقت من خلال رقم هاتفك</p>
+                    </form>
+                </div>
+        
+
+    
+                
+            </div>
+        </div>
+
+
+         
+        <div class="done-ordar">
+            <h1 class="done-ordar-h1">ثق  في تواصلنا</h1>
+            <p class="done-ordar-p">موعدنا مظبوته و تسلمنا في معادو!</p>
+        <img src="done-ordar.webp" class="img-done-ordar">
+
+       </div>
+      
+     
+
+         <script src="scrept.js" ></script>
+         <script>
+            // استيراد مكتبة EmailJS
+            emailjs.init('djmDvTd_C6wCy4VqG')
+
+// ربط زر الإرسال والنموذج
+const btn = document.getElementById('button');
+const locationInput = document.getElementById('location');
+
+// جلب الموقع الجغرافي عند تحميل الصفحة
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        locationInput.value = `https://www.google.com/maps?q=${lat},${lng}`;
+    }, error => {
+        console.error("لم يتمكن من تحديد الموقع:", error);
+        locationInput.value = "لم يتمكن من تحديد الموقع";
+    });
+} else {
+    locationInput.value = "المتصفح لا يدعم تحديد الموقع";
+}
+
+// عند إرسال النموذج
+document.getElementById('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    btn.innerText = 'جاري الإرسال...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_6mrcbbq';
+
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            btn.innerText = 'إرسال الطلب';
+            alert('✅ تم إرسال الطلب بنجاح!');
+            document.getElementById('form').reset();
+        }, (err) => {
+            btn.innerText = 'إرسال الطلب';
+            alert('❌ حدث خطأ، يرجى المحاولة مرة أخرى.');
+            console.error("Error:", err);
+        });
+});
+
+         </script>
+ <footer class="footer">
+    <div class="footer-top">
+        <a href="https://os-designer1.github.io/OS-Designer/" class="footer-logo">
+            <img src="logo.png" alt="OS Logo">
+        </a>
+        <span>اطلب اردرك بكل سهوله</span>
+    </div>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>الخدمات</h4>
+            <ul class="footer-list">
+                <li><a href="https://os-designer1.github.io/OS-Designer-logo-Designer/">شعار</a></li>
+                <li><a href="https://os-designer1.github.io/OS-Designer-panar-Designer/">يفط و بنرات</a></li>
+                <li><a href="https://os-designer1.github.io/OS-Designer-Social-media-Designer/">Social media | اعلانات</a></li>
+                <li><a href="https://os-designer1.github.io/OS-Designer-logo-Teshrt-Designer/">طباعه علي تيشرت</a></li>
+                <li><a href="https://os-designer1.github.io/OS-Designer-pepar-Designer/">خدمات ورقيه</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>التواصل</h4>
+            <ul class="footer-list">
+                <li><a href="tel:01144898934">اتصل بنا</a></li>
+                <li><a href="https://wa.me/201144898934">تواصل واتساب</a></li>
+                <li><a href="mailto:samasemo5647@gmail.com">تواصل عبر البريد الالكتروني</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <span>OS-Designer. © 2025. العلامة التجارية وجميع الحقوق محفوظة.</span>
+        |
+        <a href="https://maps.app.goo.gl/7onyXFjDYGyX34rU6"> موقعنا</a>
+        <span class="country">مصر | Egypt</span>
+    </div>
+</footer>
+     <style>
+    .footer {
+    padding: 50px;
+        background: #1c1c1c;
+        color: #fff;
+        padding: 20px;
+        text-align: right;
+        direction: rtl;
+    }
+    .footer-top {
+        padding-right: 95px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .footer-top img{
+        width: 40px;
+    }
+    .footer-container {
+        padding-left: 50px;
+        padding-right: 100px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .footer-column {
+        width: 22%;
+    }
+    .footer-column h4 {
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+    .footer-column h4:hover {
+        color: #d4d4d4;
+    }
+    .footer-list {
+        list-style: none;
+        padding: 0;
+        display: block;
+        transition: max-height 0.3s ease-out;
+    }
+    .footer-column ul li a {
+        font-size: 18px;
+        color: #ccc;
+        text-decoration: none;
+    }
+    .footer-column ul li a:hover {
+        text-decoration: underline;
+        color: #fff;
+    }
+    .footer-bottom {
+        text-align: center;
+        margin-top: 60px;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .footer-bottom a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    .footer-bottom a:hover {
+        text-decoration: underline;
+        color: #ffffff;
+    }
+
+    .footer-bottom .country {
+        color: #ccc;
+        margin-right: 300px;
+    }
+
+    .footer-bottom span {
+        color: #cecece;
+    }
+
+    @media (max-width: 768px) {
+        .footer-bottom .country {
+            font-size: 12px;
+            display: block;
+            margin: 10px 0 0 0;
+        }
+    }
+    @media (max-width: 768px) {
+        .footer-top{
+            padding-right: 0px;
+            padding-top: 10px;
+        }
+        .footer-container {
+            padding: 10px;
+            flex-direction: column;
+        }
+        .footer-top img{
+        width: 30px;
+    }
+        .footer-column {
+            width: 100%;
+        }
+        .footer-list {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .footer-column h4::after {
+            content: " ▼";
+            float: left;
+            transition: transform 0.3s ease;
+        }
+        .footer-column.open h4::after {
+            content: " ▲";
+        }
+        .footer-column.open .footer-list {
+            max-height: 500px; /* Adjust as needed */
+        }
+    }
+
+
+
+    </style></body>
+ </html>
